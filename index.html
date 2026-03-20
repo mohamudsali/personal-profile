@@ -3,40 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salman Ahmed</title>
+  <title>Mohamud Ali</title>
 
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background-color: #f7f9fc;
       color: #333;
+      scroll-behavior: smooth; /* smooth scroll for anchor links */
     }
 
     /* Navbar */
-    .navbar {
+    nav.navbar {
       background-color: #e6ebf2;
       padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .navbar h1 {
+    nav.navbar h1 {
       margin: 0;
       font-size: 22px;
       font-weight: 700;
       color: #2c3e50;
     }
 
-    .nav-links a {
+    nav.navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav.navbar ul li {
       margin-left: 20px;
+    }
+
+    nav.navbar ul li a {
       text-decoration: none;
       color: #2c3e50;
       font-weight: 500;
     }
 
-    .nav-links a:hover {
+    nav.navbar ul li a:hover {
       text-decoration: underline;
     }
 
@@ -44,7 +58,6 @@
     .container {
       max-width: 800px;
       margin: 40px auto;
-      text-align: center;
       padding: 0 20px;
     }
 
@@ -62,20 +75,28 @@
       font-size: 32px;
       font-weight: 600;
       margin: 10px 0;
+      text-align: center;
     }
 
     .title {
       color: #777;
       margin-bottom: 5px;
+      text-align: center;
     }
 
     .affiliation {
       color: #1a73e8;
       font-weight: 500;
       margin-bottom: 15px;
+      text-align: center;
     }
 
     /* Icons */
+    .icons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
     .icons a {
       margin: 0 8px;
       text-decoration: none;
@@ -83,17 +104,36 @@
       color: #1a73e8;
     }
 
-    /* Bio text */
-    .bio {
-      text-align: left;
-      margin-top: 30px;
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 24px;
+      border-bottom: 2px solid #1a73e8;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    /* Bio and other text */
+    .bio, .interests, .education, .news {
       line-height: 1.7;
       font-size: 16px;
       color: #444;
     }
 
-    .bio p {
+    .bio p, .interests p, .education p, .news p {
       margin-bottom: 15px;
+    }
+
+    .news ul {
+      padding-left: 20px;
+    }
+
+    .news li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -101,94 +141,108 @@
 <body>
 
   <!-- Navbar -->
-  <div class="navbar">
+  <nav class="navbar">
     <h1>Welcome!</h1>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">News</a>
-      <a href="#">Publications</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-      <a href="#">CV</a>
-      <a href="#">Bio</a>
-    </div>
-  </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#bio">Bio</a></li>
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <div class="container">
 
-    <!-- Profile Image -->
-    <img src="profile.jpg" alt="Profile Photo" class="profile-img">
+    <!-- Home Section -->
+    <section id="home">
+      <img src="profile.jpg" alt="Mohamud Ali profile photo" class="profile-img">
+      <div class="name">Mohamud Ali</div>
+      <div class="title">Research Scientist</div>
+      <div class="affiliation">IBM Thomas J. Watson Research Center</div>
 
-    <!-- Name & Info -->
-    <div class="name">Mohamud Ali</div>
-    <div class="title">Research Scientist</div>
-    <div class="affiliation">IBM Thomas J. Watson Research Center</div>
+      <div class="icons">
+        <a href="#">📧</a>
+        <a href="#">🎓</a>
+        <a href="#">💻</a>
+        <a href="#">🐦</a>
+        <a href="#">🔗</a>
+      </div>
+    </section>
 
-    <!-- Icons (use Font Awesome if you want real icons) -->
-    <div class="icons">
-      <a href="#">📧</a>
-      <a href="#">🎓</a>
-      <a href="#">💻</a>
-      <a href="#">🐦</a>
-      <a href="#">🔗</a>
-    </div>
+    <!-- Bio Section -->
+    <section id="bio">
+      <h2>Bio</h2>
+      <div class="bio">
+        <p>
+          I am a Research Scientist at IBM Research in the Quantum Systems and Infrastructure team. 
+          I am currently pursuing my Ph.D. in Electrical Engineering at The University of Minnesota-Twin Cities, supervised by Prof. Kevin Cao. 
+          I hold an MS in Electrical Engineering from Northwestern University-Evanston, IL, and a BS in Electrical Engineering from The University of Minnesota-Twin Cities.
+        </p>
 
-    <!-- Bio -->
-    <div class="bio">
-      <p>
-        I am a Research Scientist at IBM Research in the Quantum Systems and Infrastructure team.
-        I am currently reading my Ph.D. degree in Electrical Engineering at The University of Minnesota-Twin Cities supervised by Prof. Kevin Cao. I hold MS in Electrical Engineering from Northwestern University-Evanston IL and BS in Electrical Engineering from The University of Minnesota-Twin Cities.
-      </p>
+        <p>
+          My research focuses on developing deployable tools with concrete methodologies and metrics 
+          to quantify and measure security assurance, as well as improve cloud security.
+        </p>
 
-      <p>
-        My research focuses on developing deployable tools with concrete methodologies
-        and metrics to quantify and measure security assurance as well as improve cloud security.
-      </p>
+        <p>
+          I have also worked on the automation and security of connected vehicle technology, 
+          as well as platform tools for embedded and mobile devices.
+        </p>
 
-      <p>
-        I also worked on the automation and security of connected vehicle technology and
-        platform tools for embedded and mobile devices.
-      </p>
+        <p>
+          In my free time, you’ll find me betwixt and between—either playing soccer or running, whether in the jungle or on the treadmill. 
+          Oh, and not to mention, I’m a bit of a bookaholic too!
+        </p>
+      </div>
+    </section>
 
-      <p>
-        In my free time, you’ll find me betwixt and between—either playing soccer or running, whether in the jungle or on the treadmill. Oh—and not to mention, I’m a bit of a bookaholic too!
-      </p>
-    </div>
-<div class="two-column">
+    <!-- Interests Section -->
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <div class="interests">
+        <p>
+          AI Hardware<br>
+          Analog Compute-In-Memory<br>
+          Quantum Hardware<br>
+          Analog/Mixed-Signal IC Design<br>
+          IC Reliability Analysis
+        </p>
+      </div>
+    </section>
 
-  <!-- Interests -->
-  <div>
-    <h2>Research Interests</h2>
-    <ul>
-      <li>AI Hardware </li>
-      <li>Analog Compute-In-Memory</li>
-      <li>Quantum Hardware</li>
-      <li>Analog/Mixed-Signal IC Design</li>
-      <li> IC Reliability Analysis</li>
-    </ul>
+    <!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education">
+        <p>PhD in Electrical Engineering, Aug 2026 - <br>University of Minnesota-Twin Cities, Minneapolis, MN, USA</p>
+        <p>MS in Electrical Engineering, June 2025<br>Northwestern University, Evanston, IL, USA</p>
+        <p>BS in Electrical Engineering, May 2023<br>University of Minnesota-Twin Cities, Minneapolis, MN, USA</p>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+      <h2>What's New?</h2>
+      <div class="news">
+        <ul>
+          <li>📖 07/04/2025: Our paper on GPU Travelling accepted on ACM CCS 2025 with minor revision 😊</li>
+          <li>📖 09/19/2024: Our patent related to object guided fuzzing has been published!</li>
+          <li>📖 09/05/2024: Our patent related to dynamic quarantining of bad containers has been published!</li>
+          <li>📚 05/23/2024: Our paper on Split API-based confidential containers accepted in ACM CCS 2024!</li>
+          <li>📚 05/01/2024: Our paper titled Fast (Trapless) Kernel Probes accepted in the USENIX ATC '24!</li>
+          <li>📖 03/05/2024: Our patent related to security risk-aware scheduling has been granted!</li>
+          <li>📚 07/02/2023: Our workshop paper on eBPF kCFI accepted in SIGCOMM 2023 Workshop (eBPF '23)!</li>
+          <li>📚 05/22/2023: Our paper on prioritizing sensitive data has been accepted in USENIX Security'23 😀</li>
+          <li>📚 03/27/2023: Our paper on Intel TDX Demystified: A Top-Down Approach is available on arXiv!</li>
+          <li>📚 01/03/2023: Our paper on container security using syscall-aware scheduler accepted in AsiaCCS 2023!</li>
+        </ul>
+      </div>
+    </section>
+
   </div>
-
-  <!-- Education -->
-  <div>
-    <h2>Education</h2>
-
-    <p><strong>PhD in Electrical Engineering</strong><br>
-    Aug 2026 –- <br>
-    <span class="subtext">University of Minnesota-Twin Cities, Minneapolis, MN USA</span></p>
-
-    <p><strong>MS in Electrical Engineering</strong><br>
-    June 2025<br>
-    <span class="subtext">Northwestern University, Evanston, IL USA</span></p>
-
-    <p><strong>BS in Electrical Engineering</strong><br>
-    May 2023<br>
-    <span class="subtext">University of Minnesota-Twin Cities, Minneapolis, MN USA</span></p>
-
-  </div>
-
-</div>
-   </div>
-
 </body>
 </html>
